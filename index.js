@@ -97,7 +97,10 @@ _tcoll2.default.prototype.insert = _tcoll2.default.prototype.insertMany = functi
   return function (_x3, _x4) {
     return _ref2.apply(this, arguments);
   };
-}();['nextObject', 'count', 'close', 'toArray'].forEach(function (methodName) {
+}();
+
+_tcoll2.default.prototype.updateOne = _tcoll2.default.prototype.update;
+_tcoll2.default.prototype.updateMany = _tcoll2.default.prototype.update;['nextObject', 'count', 'close', 'toArray'].forEach(function (methodName) {
   _tcursor2.default.prototype[methodName] = _bluebird2.default.promisify(_tcursor2.default.prototype[methodName]);
 });
 

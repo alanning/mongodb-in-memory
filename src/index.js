@@ -44,6 +44,9 @@ Collection.prototype.insert = Collection.prototype.insertMany = async function (
   }
 }
 
+Collection.prototype.updateOne = Collection.prototype.update
+Collection.prototype.updateMany = Collection.prototype.update
+
 ;[
   'nextObject',
   'count',
