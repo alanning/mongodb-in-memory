@@ -47,6 +47,12 @@ Collection.prototype.insert = Collection.prototype.insertMany = async function (
 Collection.prototype.updateOne = Collection.prototype.update
 Collection.prototype.updateMany = Collection.prototype.update
 
+Collection.prototype.deleteOne = function (filter, options = {}) {
+  options = Object.assign({}, options, {single: true})
+  return Collection.prototype.remove.call(this, filter, options)
+}
+Collection.prototype.deleteMany = Collection.prototype.remove
+
 ;[
   'nextObject',
   'count',

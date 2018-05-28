@@ -5,6 +5,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Db = undefined;
 
+var _assign = require('babel-runtime/core-js/object/assign');
+
+var _assign2 = _interopRequireDefault(_assign);
+
 var _regenerator = require('babel-runtime/regenerator');
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
@@ -100,7 +104,15 @@ _tcoll2.default.prototype.insert = _tcoll2.default.prototype.insertMany = functi
 }();
 
 _tcoll2.default.prototype.updateOne = _tcoll2.default.prototype.update;
-_tcoll2.default.prototype.updateMany = _tcoll2.default.prototype.update;['nextObject', 'count', 'close', 'toArray'].forEach(function (methodName) {
+_tcoll2.default.prototype.updateMany = _tcoll2.default.prototype.update;
+
+_tcoll2.default.prototype.deleteOne = function (filter) {
+  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+  options = (0, _assign2.default)({}, options, { single: true });
+  return _tcoll2.default.prototype.remove.call(this, filter, options);
+};
+_tcoll2.default.prototype.deleteMany = _tcoll2.default.prototype.remove;['nextObject', 'count', 'close', 'toArray'].forEach(function (methodName) {
   _tcursor2.default.prototype[methodName] = _bluebird2.default.promisify(_tcursor2.default.prototype[methodName]);
 });
 
