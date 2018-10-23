@@ -62,7 +62,7 @@ Collection.prototype.deleteMany = Collection.prototype.remove
   Cursor.prototype[methodName] = Promise.promisify(Cursor.prototype[methodName])
 })
 
-const inMemory = tingodb({memStore: true, searchInArray: true})
+const inMemory = tingodb({apiLevel: 200, memStore: true, searchInArray: true})
 export const Db = inMemory.Db
 
 export function createDb() {

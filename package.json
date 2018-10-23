@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "bluebird": "^3.4.7",
-    "tingodb": "^0.5.1"
+    "@sanjo/tingodb": "^0.6.2"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",

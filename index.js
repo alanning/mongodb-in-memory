@@ -116,7 +116,7 @@ _tcoll2.default.prototype.deleteMany = _tcoll2.default.prototype.remove;['nextOb
   _tcursor2.default.prototype[methodName] = _bluebird2.default.promisify(_tcursor2.default.prototype[methodName]);
 });
 
-var inMemory = (0, _tingodb2.default)({ memStore: true, searchInArray: true });
+var inMemory = (0, _tingodb2.default)({ apiLevel: 200, memStore: true, searchInArray: true });
 var Db = exports.Db = inMemory.Db;
 
 function createDb() {
