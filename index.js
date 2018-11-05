@@ -19,15 +19,15 @@ var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
 exports.createDb = createDb;
 
-var _tingodb = require('tingodb');
+var _tingodb = require('@sanjo/tingodb');
 
 var _tingodb2 = _interopRequireDefault(_tingodb);
 
-var _tcoll = require('tingodb/lib/tcoll');
+var _tcoll = require('@sanjo/tingodb/lib/tcoll');
 
 var _tcoll2 = _interopRequireDefault(_tcoll);
 
-var _tcursor = require('tingodb/lib/tcursor');
+var _tcursor = require('@sanjo/tingodb/lib/tcursor');
 
 var _tcursor2 = _interopRequireDefault(_tcursor);
 
@@ -44,7 +44,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var insert = _tcoll2.default.prototype.insert;
 
 _tcoll2.default.prototype.insertOne = function () {
-  var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(doc, options) {
+  var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(doc, options) {
     var document;
     return _regenerator2.default.wrap(function _callee$(_context) {
       while (1) {
@@ -73,7 +73,7 @@ _tcoll2.default.prototype.insertOne = function () {
 }();
 
 _tcoll2.default.prototype.insert = _tcoll2.default.prototype.insertMany = function () {
-  var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(docs, options) {
+  var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(docs, options) {
     var documents;
     return _regenerator2.default.wrap(function _callee2$(_context2) {
       while (1) {

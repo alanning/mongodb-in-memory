@@ -1,6 +1,6 @@
-import tingodb from 'tingodb'
-import Collection from 'tingodb/lib/tcoll'
-import Cursor from 'tingodb/lib/tcursor'
+import tingodb from '@sanjo/tingodb'
+import Collection from '@sanjo/tingodb/lib/tcoll'
+import Cursor from '@sanjo/tingodb/lib/tcursor'
 import Promise from 'bluebird'
 
 // Add promise support to tingodb
