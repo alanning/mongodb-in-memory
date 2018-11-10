@@ -19,13 +19,17 @@ import Promise from 'bluebird'
   'findOne',
   'update',
   'findAndModify',
+  '_findAndModify200',
+  '_findAndModify140',
   'save',
   'remove',
   'findAndRemove',
   'mapReduce',
   'group',
 ].forEach((methodName) => {
-  Collection.prototype[methodName] = Promise.promisify(Collection.prototype[methodName])
+  if (Collection.prototype[methodName]) {
+    Collection.prototype[methodName] = Promise.promisify(Collection.prototype[methodName])
+  }
 })
 
 const insert = Collection.prototype.insert
