@@ -37,8 +37,10 @@ var _bluebird2 = _interopRequireDefault(_bluebird);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-['initM', 'initFS', 'compactCollection', 'drop', 'rename', 'createIndex', 'indexExists', 'indexes', 'insert', 'count', 'stats', 'findOne', 'update', 'findAndModify', 'save', 'remove', 'findAndRemove', 'mapReduce', 'group'].forEach(function (methodName) {
-  _tcoll2.default.prototype[methodName] = _bluebird2.default.promisify(_tcoll2.default.prototype[methodName]);
+['initM', 'initFS', 'compactCollection', 'drop', 'rename', 'createIndex', 'indexExists', 'indexes', 'insert', 'count', 'stats', 'findOne', 'update', 'findAndModify', '_findAndModify200', '_findAndModify140', 'save', 'remove', 'findAndRemove', 'mapReduce', 'group'].forEach(function (methodName) {
+  if (_tcoll2.default.prototype[methodName]) {
+    _tcoll2.default.prototype[methodName] = _bluebird2.default.promisify(_tcoll2.default.prototype[methodName]);
+  }
 });
 
 var insert = _tcoll2.default.prototype.insert;
