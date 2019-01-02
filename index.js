@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Db = undefined;
+exports.createDb = exports.Db = undefined;
 
 var _assign = require('babel-runtime/core-js/object/assign');
 
@@ -17,7 +17,35 @@ var _asyncToGenerator2 = require('babel-runtime/helpers/asyncToGenerator');
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-exports.createDb = createDb;
+var createDb = exports.createDb = function () {
+  var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3() {
+    var db;
+    return _regenerator2.default.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            db = new Db('db', {});
+
+            db.collections = _bluebird2.default.promisify(db.collections);
+            db.dropDatabase = _bluebird2.default.promisify(db.dropDatabase);
+            _context3.next = 5;
+            return db.dropDatabase();
+
+          case 5:
+            return _context3.abrupt('return', db);
+
+          case 6:
+          case 'end':
+            return _context3.stop();
+        }
+      }
+    }, _callee3, this);
+  }));
+
+  return function createDb() {
+    return _ref3.apply(this, arguments);
+  };
+}();
 
 var _tingodb = require('@sanjo/tingodb');
 
@@ -120,7 +148,3 @@ _tcoll2.default.prototype.deleteMany = _tcoll2.default.prototype.remove;['nextOb
 
 var inMemory = (0, _tingodb2.default)({ apiLevel: 200, memStore: true, searchInArray: true });
 var Db = exports.Db = inMemory.Db;
-
-function createDb() {
-  return new Db('db', {});
-}

@@ -69,6 +69,10 @@ Collection.prototype.deleteMany = Collection.prototype.remove
 const inMemory = tingodb({apiLevel: 200, memStore: true, searchInArray: true})
 export const Db = inMemory.Db
 
-export function createDb() {
-  return new Db('db', {})
+export async function createDb() {
+  const db = new Db('db', {})
+  db.collections = Promise.promisify(db.collections)
+  db.dropDatabase = Promise.promisify(db.dropDatabase)
+  await db.dropDatabase()
+  return db
 }
